@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>श्री कृष्ण एग्रो</title>
     <link rel="stylesheet" href="style.css" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
@@ -125,6 +126,101 @@
   <li><strong class="highlight-price">ब्रोइलर:</strong> <span class="price">रू. २२० प्रति केजी</span></li>
   <li><strong class="highlight-price">स्थानीय खसी:</strong> <span class="price">रू. ५५० प्रति केजी</span></li>
 </ul>
+<!--  ok -->
+
+<!-- Order Section -->
+ <!-- Order Section -->
+ <section id="order-section">
+  <h2>Order Your Items</h2>
+  <form id="order-form">
+    <div class="form-group">
+      <label for="item">Select Item</label>
+      <select id="item" name="item" required>
+        <option value="">--Select Item--</option>
+        <option value="local-kukhura">Local Kukhura (Local Chicken)</option>
+        <option value="broiler">Broiler (Broiler Chicken)</option>
+        <option value="local-khasi">Local Khasi (Local Goat)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Number of Items</label>
+      <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter number of items" required>
+    </div>
+
+    <div class="form-group">
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Delivery Address</label>
+      <textarea id="address" name="address" placeholder="Enter your delivery address" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="nepali-date">Order Date (Nepali Date)</label>
+      <input type="date" id="nepali-date" name="nepali-date" placeholder="Select the date" required>
+    </div>
+    <div class="form-group">
+      <label for="delivery-time">Expected Delivery Time</label>
+      <input type="time" id="delivery-time" name="delivery-time" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Special Instructions</label>
+      <textarea id="message" name="message" placeholder="Enter any special instructions or requests"></textarea>
+    </div>
+
+    <button type="submit">Place Order</button>
+  </form>
+
+  <div id="thank-you-message" class="thank-you-message" style="display: none;">
+    <h3>Thank you for your order!</h3>
+    <p>We will contact you soon for confirmation.</p>
+  </div>
+</section>
+
+<!-- Include Nepali Datepicker JS -->
+<script src="https://cdn.jsdelivr.net/npm/nepali-datepicker@3.2.1/dist/nepali.datepicker.min.js"></script>
+<script>
+  // Initialize Nepali Date Picker
+  document.addEventListener("DOMContentLoaded", function() {
+    nepaliDatePicker.create({
+      el: '#nepali-date',
+      format: 'YYYY-MM-DD' // You can adjust the format as needed
+    });
+  });
+
+  // Handling the form submission
+  document.getElementById('order-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent the form from reloading the page
+    
+    const selectedItem = document.getElementById('item').value;
+    const quantity = document.getElementById('quantity').value;
+    const contact = document.getElementById('contact').value;
+    const address = document.getElementById('address').value;
+    const deliveryTime = document.getElementById('delivery-time').value;
+    const message = document.getElementById('message').value;
+    const nepaliDate = document.getElementById('nepali-date').value;
+
+    if (selectedItem && quantity && contact && address && deliveryTime && nepaliDate) {
+      // Display a thank you message and hide the form
+      document.getElementById('thank-you-message').style.display = 'block';
+      document.getElementById('order-form').reset();
+    } else {
+      alert('Please fill in all required fields.');
+    }
+  });
+</script>
+
+
+
+
+<!--  ok -->
+
+
+
+
         </div>
 
         <!-- Right Side: Live Logo and Date -->
@@ -147,7 +243,7 @@
         </div>
       </div>
     </section>
-
+    
     <script src="script.js"></script>
   </body>
 </html>

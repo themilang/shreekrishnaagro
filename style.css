@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 /* Navbar styles */
 header {
   width: 100%;
@@ -14,7 +24,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px;
+  padding: 20px;
   color: #fff;
   max-width: 1200px;
   margin: auto;
@@ -31,9 +41,9 @@ header {
 }
 
 .logo-image {
-  width: 40px;
+  width: 40px; /* Adjust size as needed */
   height: 40px;
-  margin-right: 10px;
+  margin-right: 10px; /* Space between image and text */
 }
 
 .nav-links {
@@ -95,14 +105,12 @@ header {
     display: flex;
   }
 }
-
-/* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url("background.webp"); /* Hero image */
+  background-image: url("background.webp"); /* Replace with your image path */
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed; /* Keeps the image fixed during scroll */
   background-position: center;
   display: flex;
   justify-content: center;
@@ -118,7 +126,7 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent overlay */
 }
 
 .hero-content {
@@ -131,11 +139,13 @@ header {
   font-size: 3em;
   font-weight: 600;
   margin-bottom: 10px;
+  animation: fadeInDown 2s ease-in-out;
 }
 
 .hero-content p {
   font-size: 1.2em;
   margin-bottom: 20px;
+  animation: fadeInUp 2s ease-in-out;
 }
 
 .cta {
@@ -147,8 +157,382 @@ header {
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  animation: fadeInUp 2.5s ease-in-out;
 }
 
 .cta:hover {
   background-color: #e08900;
+}
+
+/* Next Section */
+/* Content Section */
+.content {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.content p {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: auto;
+  color: #555;
+}
+
+/* Farm Cards Section */
+.farm-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Individual Card */
+.card {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  text-align: left;
+  position: relative;
+  cursor: pointer;
+  transform: scale(1);
+  opacity: 1;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.card h3 {
+  font-size: 1.9em;
+  margin: 20px;
+  color: #4c4c4c;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card p {
+  font-size: 1.1em;
+  margin: 10px 20px;
+  color: #171717;
+  font-family: "Arial", sans-serif;
+}
+
+.details-btn {
+  display: block;
+  margin: 20px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #ff9f00, #ff5c00);
+  color: #fff;
+  text-align: center;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.details-btn:hover {
+  background-color: #ff4f00;
+  transform: translateY(-5px);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card:hover .details-btn {
+  background-color: #ff4f00;
+}
+
+/* Hover Animation on Card Title */
+.card h3 {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card:hover h3 {
+  transform: translateY(-10px);
+  color: #cc5404;
+}
+/* Scroll Down Button */
+.scroll-down-btn {
+  position: fixed;
+  bottom: 20px; /* smaller distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 18px; /* smaller padding */
+  border-radius: 25px;
+  font-size: 1.1em; /* smaller font size */
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  z-index: 100;
+  opacity: 1; /* initially fully visible */
+}
+
+.scroll-down-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.scroll-down-btn span {
+  font-size: 1.3em;
+}
+
+.scroll-down-btn.fade-out {
+  opacity: 0; /* Make it fade when the page is scrolled */
+}
+/* Farm Price Updates Section */
+#farm-price-updates {
+  background-color: #ffffff; /* Light background to make text stand out */
+  padding: 50px 20px;
+  border-radius: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Left Side: Price Updates */
+.price-updates {
+  flex: 1;
+  background-color: #f8f8f8;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 48%;
+}
+
+.price-updates h2 {
+  font-size: 1.8em;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.price-updates p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.price-updates ul {
+  font-size: 1.2em;
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 1.8;
+}
+
+.price-updates ul li {
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Highlight Price */
+.highlight-price {
+  color: #e74c3c;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.price {
+  color: #16a085;
+  font-weight: 600;
+  font-size: 1.4em;
+}
+/* Right Side: Farm Stats / Gallery */
+.farm-stats {
+    flex: 1;
+    background-color: #f8f8f8;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 48%;
+  }
+  
+  .farm-stats h3 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .farm-stats ul {
+    font-size: 1.2em;
+    color: #555;
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+  
+  .farm-stats ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  /* Highlight Farm Items */
+  .highlight-item {
+    color: #2980b9;
+    font-weight: 600;
+  }
+  
+  /* Gallery Images */
+  .farm-stats .gallery {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow images to wrap if needed */
+  }
+  
+  .farm-stats .gallery img {
+    max-width: 100%; /* Ensure images don't overflow */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    object-fit: cover; /* Ensures the images cover the available space without stretching */
+  }
+  
+  .farm-stats .gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Hover Effects and Animations */
+  .price-updates ul li:hover {
+    color: #2980b9;
+    cursor: pointer;
+  }
+  
+  .farm-stats ul li:hover {
+    color: #e74c3c;
+    cursor: pointer;
+  }
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .price-updates,
+  .farm-stats {
+    width: 100%;
+  }
+}
+
+/* Hover Effects and Animations */
+.price-updates ul li:hover {
+  color: #2980b9;
+  cursor: pointer;
+}
+
+.farm-stats ul li:hover {
+  color: #e74c3c;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .price-updates,
+  .live-info {
+    width: 100%;
+  }
+}
+
+/*fdsfsdf*/
+
+
+
+.price-graph {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .price-graph h4 {
+    font-size: 1.6em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    font-size: 1.2em;
+    color: #555;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .highlight-price {
+    font-weight: 600;
+    color: #2980b9;
+  }
+  
+  .price {
+    color: #e74c3c;
+  }
+
+
+
+
+
+
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

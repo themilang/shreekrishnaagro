@@ -180,38 +180,7 @@
   </div>
 </section>
 
-<!-- Include Nepali Datepicker JS -->
-<script src="https://cdn.jsdelivr.net/npm/nepali-datepicker@3.2.1/dist/nepali.datepicker.min.js"></script>
-<script>
-  // Initialize Nepali Date Picker
-  document.addEventListener("DOMContentLoaded", function() {
-    nepaliDatePicker.create({
-      el: '#nepali-date',
-      format: 'YYYY-MM-DD' // You can adjust the format as needed
-    });
-  });
 
-  // Handling the form submission
-  document.getElementById('order-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent the form from reloading the page
-    
-    const selectedItem = document.getElementById('item').value;
-    const quantity = document.getElementById('quantity').value;
-    const contact = document.getElementById('contact').value;
-    const address = document.getElementById('address').value;
-    const deliveryTime = document.getElementById('delivery-time').value;
-    const message = document.getElementById('message').value;
-    const nepaliDate = document.getElementById('nepali-date').value;
-
-    if (selectedItem && quantity && contact && address && deliveryTime && nepaliDate) {
-      // Display a thank you message and hide the form
-      document.getElementById('thank-you-message').style.display = 'block';
-      document.getElementById('order-form').reset();
-    } else {
-      alert('Please fill in all required fields.');
-    }
-  });
-</script>
 
 
 
@@ -240,6 +209,26 @@
             <img src="farm-image1.jpg" alt="Farm Image 1" />
             <img src="farm-image2.jpg" alt="Farm Image 2" />
           </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="collaboration">
+      <h2>हाम्रो सहकार्य</h2>
+      <p>हामी विभिन्न प्रमुख कम्पनीहरूसँग सहकार्य गर्दै, उत्कृष्ट उत्पादन र सेवाहरू प्रदान गर्दै आएका छौं।</p>
+      <div class="logos">
+        <div class="logo">
+          <img src="nepal.png" alt="Company 1 Logo" />
+        </div>
+        <div class="logo">
+          <img src="nepal.png" alt="Company 2 Logo" />
+        </div>
+        <div class="logo">
+          <img src="nepal.png" alt="Company 3 Logo" />
+        </div>
+        <div class="logo">
+          <img src="nepal.png" alt="Company 4 Logo" />
         </div>
       </div>
     </section>

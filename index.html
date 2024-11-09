@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ne">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>श्री कृष्ण एग्रो</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img
+            src="logo.png"
+            alt="Shree Krishna Agro Logo"
+            class="logo-image"
+          />
+          श्री कृष्ण एग्रो
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">गृहपृष्ठ</a></li>
+          <li><a href="#about">हाम्रोबारे</a></li>
+          <li><a href="#services">सेवाहरू</a></li>
+          <li><a href="#contact">सम्पर्क</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>श्री कृष्ण एग्रो</h1>
+        <p>Contact</p>
+        <a href="#about" class="cta">हाम्रोबारे जान्नुहोस्</a>
+      </div>
+    </section>
+
+    <!-- Scroll Down Button -->
+    <a href="#content" class="scroll-down-btn">
+      <span>&#8595;</span> Scroll Down
+    </a>
+
+    <section class="content" id="content">
+      <h2>हाम्रो फार्महरू</h2>
+      <p>श्री कृष्ण एग्रो विभिन्न प्रकारका उत्पादनहरू विकास र वितरण गर्दछ।</p>
+
+      <div class="farm-cards">
+        <!-- Local Kukhura Card -->
+        <div class="card">
+          <img src="l.jpg" alt="Local Kukhura" />
+          <h3>स्थानीय कुखुरा फार्म</h3>
+          <p>
+            हाम्रो स्थानीय कुखुरा फार्मले स्वस्थ र ताजै कुखुरा उत्पादन गर्दछ।
+          </p>
+          <a href="local-kukhura-details.html" class="details-btn"
+            >थप जानकारी</a
+          >
+        </div>
+
+        <!-- Broiler Card -->
+        <div class="card">
+          <img src="b.jpeg" alt="Broiler" />
+          <h3>ब्रोइलर फार्म</h3>
+          <p>उच्च गुणस्तरको ब्रोइलर उत्पादन गर्ने हाम्रो फार्म।</p>
+          <a href="broiler-details.html" class="details-btn">थप जानकारी</a>
+        </div>
+
+        <!-- khasi Farm Card -->
+        <div class="card">
+          <img src="d.webp" alt="Banana Farm" />
+          <h3>स्थानीय खसी फार्म</h3>
+          <p>ताजै र स्वस्थ स्थानीय खसीको पालन र वितरणको लागि विशेष।</p>
+          <a href="localkhasi-details.html" class="details-btn">थप जानकारी</a>
+        </div>
+      </div>
+    </section>
+    <!-- Farm Price Updates Section -->
+    <!-- Farm Price Updates Section -->
+    <section id="farm-price-updates">
+      <div class="container">
+        <!-- Left Side: Farm Price Updates -->
+        <div class="price-updates">
+          <h2>
+            Farm Price Updates
+            <span style="color: rgb(33, 216, 33); font-size: medium"
+              >🟢 live</span
+            >
+          </h2>
+          <p>श्री कृष्ण एग्रो मा उत्पादनहरूको ताजा मूल्यहरू:</p>
+          <!-- <ul>
+            <li>
+              <strong class="highlight-price">स्थानीय कुखुरा:</strong>
+              <span class="price">रू. २५० प्रति केजी</span>
+            </li>
+            <li>
+              <strong class="highlight-price">ब्रोइलर:</strong>
+              <span class="price">रू. २२० प्रति केजी</span>
+            </li>
+            <li>
+              <strong class="highlight-price">स्थानीय खसी:</strong>
+              <span class="price">रू. ५५० प्रति केजी</span>
+            </li>
+          </ul> -->
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<section class="price-graph">
+  <!-- <h4>Price Over Time (Daily)</h4> -->
+  <canvas id="priceChart"></canvas>
+</section>
+
+<!-- Price List -->
+<ul>
+  <li><strong class="highlight-price">स्थानीय कुखुरा:</strong> <span class="price">रू. २५० प्रति केजी</span></li>
+  <li><strong class="highlight-price">ब्रोइलर:</strong> <span class="price">रू. २२० प्रति केजी</span></li>
+  <li><strong class="highlight-price">स्थानीय खसी:</strong> <span class="price">रू. ५५० प्रति केजी</span></li>
+</ul>
+        </div>
+
+        <!-- Right Side: Live Logo and Date -->
+        <div class="farm-stats">
+          <h3>Farm Stats</h3>
+          <ul>
+            <li>
+              <strong class="highlight-item">कुखुरा फार्म:</strong> ५००+ कुखुरा
+            </li>
+            <li>
+              <strong class="highlight-item">ब्रोइलर फार्म:</strong> १०००+
+              ब्रोइलर
+            </li>
+            <li><strong class="highlight-item">खसी फार्म:</strong> १५०+ खसी</li>
+          </ul>
+          <div class="gallery">
+            <img src="farm-image1.jpg" alt="Farm Image 1" />
+            <img src="farm-image2.jpg" alt="Farm Image 2" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
